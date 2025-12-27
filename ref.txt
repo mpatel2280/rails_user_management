@@ -8,3 +8,17 @@ git push -u origin master
 
 cd <project_dir>
 rails db:create
+
+gem "bcrypt", "~> 3.1.7"
+bundle install
+
+rails generate model User name:string email:string password_digest:string
+rails db:migrate
+
+rails generate controller Sessions
+
+rails generate controller Users
+
+rails server 
+OR 
+bundle exec rails s
