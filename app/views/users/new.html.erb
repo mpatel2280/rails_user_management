@@ -2,6 +2,19 @@
   <div class="bg-white rounded-xl shadow-sm border p-8">
     <h2 class="text-2xl font-bold mb-6 text-center">Create your account</h2>
 
+    <% if @user.errors.any? %>
+      <div class="mb-6 rounded-md border border-red-200 bg-red-50 p-4">
+        <h3 class="mb-2 font-medium text-red-800">
+          Please fix the following errors:
+        </h3>
+        <ul class="list-disc list-inside text-sm text-red-700">
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= form_with model: @user do |f| %>
       <div class="mb-4">
         <%= f.label :name, class: "block text-sm font-medium mb-1" %>
