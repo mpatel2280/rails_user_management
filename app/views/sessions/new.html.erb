@@ -1,25 +1,30 @@
-<div class="max-w-md mx-auto bg-white p-6 rounded shadow">
-  <h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+<div class="max-w-md mx-auto">
+  <div class="bg-white rounded-xl shadow-sm border p-8">
+    <h2 class="text-2xl font-bold mb-2 text-center">Welcome back</h2>
+    <p class="text-sm text-gray-500 text-center mb-6">
+      Sign in to your account
+    </p>
 
-  <%= form_with url: login_path, data: { turbo: false } do %>
-    <div class="mb-4">
-      <%= label_tag :email, nil, class: "block text-sm font-medium" %>
-      <%= email_field_tag :email, nil,
-            class: "w-full mt-1 p-2 border rounded focus:ring focus:ring-blue-200" %>
-    </div>
+    <%= form_with url: login_path, data: { turbo: false } do %>
+      <div class="mb-4">
+        <%= label_tag :email, "Email", class: "block text-sm font-medium mb-1" %>
+        <%= email_field_tag :email, nil,
+          class: "w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" %>
+      </div>
 
-    <div class="mb-6">
-      <%= label_tag :password, nil, class: "block text-sm font-medium" %>
-      <%= password_field_tag :password, nil,
-            class: "w-full mt-1 p-2 border rounded focus:ring focus:ring-blue-200" %>
-    </div>
+      <div class="mb-6">
+        <%= label_tag :password, "Password", class: "block text-sm font-medium mb-1" %>
+        <%= password_field_tag :password, nil,
+          class: "w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" %>
+      </div>
 
-    <%= submit_tag "Login",
-          class: "w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700" %>
-  <% end %>
+      <%= submit_tag "Sign in",
+        class: "w-full rounded-md bg-blue-600 py-2 text-white font-medium hover:bg-blue-700 transition" %>
+    <% end %>
 
-  <p class="mt-4 text-center text-sm">
-    Don’t have an account?
-    <%= link_to "Register", new_user_path, class: "text-blue-600 hover:underline" %>
-  </p>
+    <p class="mt-6 text-center text-sm text-gray-600">
+      Don’t have an account?
+      <%= link_to "Create one", new_user_path, class: "text-blue-600 hover:underline" %>
+    </p>
+  </div>
 </div>
