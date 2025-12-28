@@ -1,0 +1,10 @@
+<div class="max-w-md bg-white shadow rounded p-6">
+  <h1 class="text-xl font-bold mb-4">User Details</h1>
+
+  <p class="mb-2"><strong>Name:</strong> <%= @user.name %></p>
+  <p class="mb-4"><strong>Email:</strong> <%= @user.email %></p>
+
+  <%= link_to "Edit",
+        edit_user_path(@user),
+        class: "inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+</div>

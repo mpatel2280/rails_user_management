@@ -1,17 +1,32 @@
-<h1>Register</h1>
+<div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+  <h1 class="text-2xl font-bold mb-6 text-center">Register</h1>
 
-<%= form_with model: @user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= form_with model: @user do |f| %>
+    <div class="mb-4">
+      <%= f.label :name, class: "block text-sm font-medium" %>
+      <%= f.text_field :name,
+            class: "w-full mt-1 p-2 border rounded" %>
+    </div>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+    <div class="mb-4">
+      <%= f.label :email, class: "block text-sm font-medium" %>
+      <%= f.email_field :email,
+            class: "w-full mt-1 p-2 border rounded" %>
+    </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <div class="mb-4">
+      <%= f.label :password, class: "block text-sm font-medium" %>
+      <%= f.password_field :password,
+            class: "w-full mt-1 p-2 border rounded" %>
+    </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+    <div class="mb-6">
+      <%= f.label :password_confirmation, class: "block text-sm font-medium" %>
+      <%= f.password_field :password_confirmation,
+            class: "w-full mt-1 p-2 border rounded" %>
+    </div>
 
-  <%= f.submit "Register" %>
-<% end %>
+    <%= f.submit "Create Account",
+          class: "w-full bg-green-600 text-white py-2 rounded hover:bg-green-700" %>
+  <% end %>
+</div>
