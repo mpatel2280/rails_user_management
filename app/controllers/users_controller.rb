@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path, notice: "Registration successful"
+      redirect_to login_path, notice: "Account created successfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,9 +29,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: "User updated"
+      redirect_to @user, notice: "User updated successfully"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -5,6 +5,12 @@
       Sign in to your account
     </p>
 
+    <% if flash[:alert] %>
+      <div class="mb-6 rounded-md border border-red-200 bg-red-50 p-4 text-red-800">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= form_with url: login_path, data: { turbo: false } do %>
       <div class="mb-4">
         <%= label_tag :email, "Email", class: "block text-sm font-medium mb-1" %>
