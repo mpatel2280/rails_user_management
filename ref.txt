@@ -22,3 +22,8 @@ rails generate controller Users
 rails server 
 OR 
 bundle exec rails s
+
+gem "tailwindcss-rails"
+bundle install 
+
+rails tailwindcss:install
